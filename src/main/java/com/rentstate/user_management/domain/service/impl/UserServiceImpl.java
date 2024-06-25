@@ -1,5 +1,6 @@
 package com.rentstate.user_management.domain.service.impl;
 
+import com.rentstate.user_management.domain.model.dto.request.LoginRequest;
 import com.rentstate.user_management.domain.model.dto.request.RatingRequest;
 import com.rentstate.user_management.domain.model.dto.request.UserCreateRequest;
 import com.rentstate.user_management.domain.model.dto.request.UserUpdateRequest;
@@ -91,6 +92,16 @@ public class UserServiceImpl implements UserService {
 
         }
         return true;
+    }
+
+    @Override
+    public UserResponse login(LoginRequest loginRequest) {
+        User user = userRepository.findByUsername(loginRequest.getEmail());
+        if(user.getPassword().equals(loginRequest.getPassword())){
+            return new UserResponse(user);
+        }else{
+            return null;
+        }
     }
 
 }

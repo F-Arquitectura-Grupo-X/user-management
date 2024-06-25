@@ -80,6 +80,7 @@ public class User {
         this.gender = updateRequest.getGender();
         this.description = updateRequest.getDescription();
         this.photoUrl = updateRequest.getPhotoUrl();
+        this.isPremium = updateRequest.getIsPremium();
     }
 
 }

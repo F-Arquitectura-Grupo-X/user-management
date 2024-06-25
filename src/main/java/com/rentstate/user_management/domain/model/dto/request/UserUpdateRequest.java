@@ -12,5 +12,5 @@ public class UserUpdateRequest {
     private String gender;
     private String description;
     private String photoUrl;
-
+    private Boolean isPremium;
 }

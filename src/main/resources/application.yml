@@ -5,6 +5,7 @@ spring:
   application:
     name: msvc-userManagement
 
+
   config:
     import: optional:configserver:http://localhost:8888
   datasource:
@@ -17,3 +18,7 @@ spring:
       ddl-auto: update
     database: mysql
     database-platform: org.hibernate.dialect.MySQLDialect
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+

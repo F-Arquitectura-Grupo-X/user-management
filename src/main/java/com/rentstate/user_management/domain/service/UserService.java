@@ -1,5 +1,6 @@
 package com.rentstate.user_management.domain.service;
 
+import com.rentstate.user_management.domain.model.dto.request.LoginRequest;
 import com.rentstate.user_management.domain.model.dto.request.RatingRequest;
 import com.rentstate.user_management.domain.model.dto.request.UserCreateRequest;
 import com.rentstate.user_management.domain.model.dto.request.UserUpdateRequest;
@@ -13,5 +14,7 @@ public interface UserService {
     Boolean delete (Long userId);
 
     Boolean rateUser(RatingRequest ratingRequest);
+
+    UserResponse login(LoginRequest loginRequest);
 
 }
